@@ -1,0 +1,6 @@
+# Log file
+*.log
+
+.idea/
+spring-integration-test.iml
+target/

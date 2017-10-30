@@ -1,0 +1,5 @@
+### application property
+
+server:
+  port: 8090
+  contextPath: /shop
