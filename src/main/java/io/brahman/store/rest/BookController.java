@@ -27,6 +27,24 @@ public class BookController {
 	}
 
 	@RequestMapping(
+			value = "{bookId}",
+			method = RequestMethod.GET,
+			produces = {"application/json"})
+	@ResponseStatus(HttpStatus.OK)
+	public WebResponse get(@PathVariable String bookId) {
+		return new WebResponse<>(bookService.get(bookId));
+	}
+
+	@RequestMapping(
+			value = "/findByTitle",
+			method = RequestMethod.GET,
+			produces = {"application/json"})
+	@ResponseStatus(HttpStatus.OK)
+	public WebResponse getByTitle(@RequestParam String bookTitle) {
+		return new WebResponse<>(bookService.getByTitle(bookTitle));
+	}
+
+	@RequestMapping(
 			method = RequestMethod.POST,
 			produces = {"application/json"})
 	@ResponseStatus(HttpStatus.CREATED)
